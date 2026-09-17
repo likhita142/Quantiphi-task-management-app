@@ -1,0 +1,308 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #1f2937;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.app {
+    min-height: 100vh;
+    padding: 30px;
+}
+
+
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+header p {
+    color: #6b7280;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.actions button {
+    border: none;
+    background: #2563eb;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 7px;
+}
+
+.actions select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+}
+
+
+/* TEAM */
+
+.team {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+}
+
+.team h2 {
+    margin-top: 0;
+}
+
+.team-list {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.member {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.member small {
+    display: block;
+    color: #6b7280;
+    margin-top: 3px;
+}
+
+
+/* AVATAR */
+
+.avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+
+    background: #2563eb;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: bold;
+}
+
+.avatar.overloaded {
+    background: red;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.12);
+        opacity: .5;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* BOARD */
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.column {
+    background: #e9edf2;
+    padding: 16px;
+    border-radius: 12px;
+    min-height: 500px;
+}
+
+.column-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.column-title h2 {
+    font-size: 18px;
+}
+
+.column-title span {
+    background: white;
+    padding: 7px 10px;
+    border-radius: 50%;
+}
+
+
+/* TASK */
+
+.task-card {
+    background: white;
+    padding: 15px;
+    margin-top: 12px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px #00000012;
+}
+
+.task-card[draggable="true"] {
+    cursor: grab;
+}
+
+.task-heading {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.task-heading h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.task-card p {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.task-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: #6b7280;
+    font-size: 12px;
+}
+
+
+/* PRIORITY */
+
+.priority {
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.priority.high {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.priority.medium {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.priority.low {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+
+/* DELETE */
+
+.delete {
+    border: none;
+    background: transparent;
+    color: #dc2626;
+    margin-top: 10px;
+}
+
+
+/* MODAL */
+
+.modal-bg {
+    position: fixed;
+    inset: 0;
+
+    background: #00000066;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal {
+    background: white;
+    width: 400px;
+    padding: 25px;
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.modal input,
+.modal textarea,
+.modal select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.modal textarea {
+    min-height: 80px;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.modal-buttons button {
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    background: #2563eb;
+    color: white;
+}
+
+
+@media (max-width: 900px) {
+
+    .board {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+}
